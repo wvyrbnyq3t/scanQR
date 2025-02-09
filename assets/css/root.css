@@ -1,0 +1,12 @@
+:root {
+  --c-gray: #ccc;
+  --c-green: #239d63;
+  --c-primary: #ed7a9b;
+  --c-red: #eb0001;
+  --c-txt: #4e4e4e;
+
+  --bgc-overlay: rgba(0, 0, 0, 0.5);
+  --bgc-blue: #f4fcff;
+
+  --w-pc: 500px;
+}

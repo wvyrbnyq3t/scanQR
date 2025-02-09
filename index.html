@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/root.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/css/lib/modal.css" />
+    <link rel="stylesheet" href="./assets/css/lib/upsell.css" />
+    <link rel="stylesheet" href="./assets/css/lib/slider.css" />
+    <link rel="stylesheet" href="./assets/css/lib/scanQR.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- Google Fontsの読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Material Icon -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="upsell">
+      <section class="upsellContent bgc-red" data-field="scanQRErr" id="scanQRErr">
+        <div class="upsellHeader">
+          <h2 class="title fs-large">エラー</h2>
+          <button type="button" class="btnIcn btnIcn-close btn-closeUpsell"></button>
+        </div>
+        <div class="upsellBody">
+          <p>
+            二次元コードを読み込むためにはカメラを有効にする必要があります。  
+          </p>
+        </div>
+      </section>
+    </div>
+    <div id="modal">
+      <div class="overlay"></div>
+      <div class="bottom">
+        <section
+          class="modalContent"
+          id="scanQRSucess"
+          data-field="scanQRSucess"
+        >
+          <div class="modalHeader">
+            <h2 class="fs-large">二次元コードを読み込みました</h2>
+          </div>
+          <div class="modalBody">
+            <div class="column-wrap">
+              <div class="column-item">
+                <button
+                  type="button"
+                  class="btn-secondary w-100 btn-closeModal btn-closeSlider"
+                >
+                  閉じる
+                </button>
+              </div>
+              <div class="column-item">
+                <button type="button" class="btn-primary w-100">入場処理</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div id="slider">
+      <div class="sliderContent slider-bottom" id="scanQR" data-field="scanQR">
+        <div class="sliderHeader bgc-white">
+          <button
+            type="button"
+            class="btnIcn btn-closeSlider btn-pauseScanQR"
+          ></button>
+          <h2 class="sliderContentTitle">二次元コードをスキャン</h2>
+        </div>
+        <div class="sliderBody">
+          <canvas id="scanQRCanvas"></canvas>
+        </div>
+      </div>
+    </div>
+    <div id="loading"></div>
+    <div class="pageContent">
+      <main>
+        <div class="container">
+          <button
+            type="button"
+            class="btn-secondary w-100 btn-openSlider btn-bootScanQR"
+            data-field="scanQR"
+          >
+            二次元コードをスキャン
+          </button>
+        </div>
+      </main>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/lib/modal.js"></script>
+    <script src="./assets/js/lib/upsell.js"></script>
+    <script src="./assets/js/lib/slider.js"></script>
+    <script src="./assets/js/lib/scanQR.js"></script>
+  </body>
+</html>

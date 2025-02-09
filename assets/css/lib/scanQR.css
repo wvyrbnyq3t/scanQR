@@ -1,0 +1,13 @@
+#scanQR {
+  #scanQRCanvas {
+    background-color: var(--bgc-blue);
+    height: 100dvh;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 101;
+  }
+}

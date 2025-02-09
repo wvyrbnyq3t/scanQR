@@ -1,0 +1,66 @@
+#modal {
+  height: 100dvh;
+  width: 100dvw;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  z-index: 200;
+
+  &.is-open {
+    visibility: visible;
+  }
+
+  .overlay {
+    background-color: var(--bgc-overlay);
+    height: 100dvh;
+    width: 100dvw;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 200;
+  }
+
+  .bottom {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: min(100%, var(--w-pc));
+    z-index: 201;
+
+    .modalContent {
+      border-top-right-radius: 1.6rem;
+      border-top-left-radius: 1.6rem;
+      padding: 3.2rem 1.6rem calc(3.2rem + env(safe-area-inset-bottom));
+      transform: translate(0, 100%);
+
+      &.is-active {
+        transform: translate(0, 0);
+      }
+    }
+  }
+
+  .modalContent {
+    background-color: #fff;
+    height: fit-content;
+    max-height: 90%;
+    overflow: hidden auto;
+    transition: all 0.4s;
+    visibility: hidden;
+
+    &.is-active {
+      visibility: visible;
+    }
+
+    > * {
+      margin-bottom: 1.6rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
